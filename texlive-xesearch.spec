@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-xesearch
 Version:	20091118
-Release:	3
+Release:	4
 Summary:	A string finder for XeTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xetex/generic/xesearch
