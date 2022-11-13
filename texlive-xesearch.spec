@@ -1,18 +1,12 @@
-# revision 16041
-# category Package
-# catalog-ctan /macros/xetex/generic/xesearch
-# catalog-date 2009-11-18 12:12:09 +0100
-# catalog-license lppl
-# catalog-version undef
 Name:		texlive-xesearch
-Version:	20190228
+Version:	51908
 Release:	1
 Summary:	A string finder for XeTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xetex/generic/xesearch
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xesearch.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xesearch.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xesearch.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xesearch.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -29,12 +23,12 @@ of simple use to check spelling, count words, and highlight
 syntax of programming languages.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -46,23 +40,10 @@ syntax of programming languages.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 20091118-2
-+ Revision: 757592
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20091118-1
-+ Revision: 719927
-- texlive-xesearch
-- texlive-xesearch
-- texlive-xesearch
-
