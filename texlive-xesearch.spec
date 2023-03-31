@@ -1,6 +1,6 @@
 Name:		texlive-xesearch
 Version:	51908
-Release:	1
+Release:	2
 Summary:	A string finder for XeTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/xetex/generic/xesearch
